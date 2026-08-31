@@ -9,9 +9,8 @@
 以下のURLをカレンダーアプリに「照会（購読）」として追加することで、時間割が変更・修正された際に自動的にご自身のカレンダーも更新されます。
 
 **購読用URL:**
-```text
-https://github.com/exact2113/OkaMed-Calendar/releases/latest/download/gakushi_timetable_2026.ics
-```
+
+2025年入学：`https://github.com/exact2113/OkaMed-Calendar/releases/latest/download/gakushi_timetable_2025.ics`
 
 ---
 

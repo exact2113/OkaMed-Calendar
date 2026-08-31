@@ -28,7 +28,7 @@ jobs:
       - name: Generate ICS File
         run: |
           # scriptsフォルダ内のスクリプトを実行
-          python scripts/generate_2026.py
+          python scripts/generate_2025.py
           # 将来スクリプトが増えたらここに追記: python scripts/generate_2027.py
 
       - name: Release

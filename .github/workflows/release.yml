@@ -1,0 +1,39 @@
+name: Generate and Release ICS
+
+on:
+  push:
+    tags:
+      - 'v*' # v1.0, v2026.1 などのタグがPushされた時に実行
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Generate ICS File
+        run: |
+          # scriptsフォルダ内のスクリプトを実行
+          python scripts/generate_2026.py
+          # 将来スクリプトが増えたらここに追記: python scripts/generate_2027.py
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: "*.ics" # 生成されたすべてのICSファイルをリリースに添付
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

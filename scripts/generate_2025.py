@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 岡山大学医学部 学士編入 時間割 → ICS変換スクリプト
-ハードコード版 - 2026年度学士時間割
+ハードコード版 - 2026年度学士時間割 2025年入学相当
 """
 
 from icalendar import Calendar, Event
@@ -11,7 +11,7 @@ from pathlib import Path
 import re
 from collections import Counter
 
-YEAR = 2026
+YEAR = 2025
 TZ = pytz.timezone('Asia/Tokyo')
 
 TIME_SLOTS = {
